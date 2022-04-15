@@ -1,4 +1,5 @@
 import armass.*
+import jugadoresPersonajes.*
 
 object castillo {
 	var nivelDeDefensa = 150
@@ -12,6 +13,12 @@ object castillo {
 			nivelDeDefensa = 0.max(nivelDeDefensa - arma.potenciaDeAtaque())
 			arma.usar()
 		}
+	}
+	
+	method recibirTrabajo() {
+		//Aca tengo que otorgar el valor recolectado, pero nose como xd. Le otorga la defensa del castillo / 5.
+		
+		nivelDeDefensa = 200.min(nivelDeDefensa + 20)
 	}
 }
 
@@ -28,8 +35,20 @@ object aurora {
 			arma.usar()
 		}
 	}
+	
+	method recibirTrabajo() {
+		//Aca tengo que otorgar el valor recolectado, pero nose como xd. Le otorga 15 unidades.
+	}
 }
 
 object tipa {
 	var altura = 8
+	
+	method altura() = altura
+	
+	method recibirTrabajo() {
+		//Aca tengo que otorgar el valor recolectado, pero nose como xd. Le otorga el doble de la altura.
+		
+		altura += 1
+	}
 }
