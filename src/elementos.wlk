@@ -8,8 +8,10 @@ object castillo {
 	method nivelDeDefensa() = nivelDeDefensa
 	
 	method recibirAtaque(arma) {
-		nivelDeDefensa = 0.mas(nivelDeDefensa - arma.potenciaDeataque())
-		arma.usar()
+		if (arma.estaCargada()) {
+			nivelDeDefensa = 0.max(nivelDeDefensa - arma.potenciaDeAtaque())
+			arma.usar()
+		}
 	}
 }
 
@@ -21,7 +23,10 @@ object aurora {
 	method estaViva() = estaViva
 	
 	method recibirAtaque(arma) {
-		
+		if (arma.estaCargada() and arma.potenciaDeAtaque() >= 10) {
+			estaViva = false
+			arma.usar()
+		}
 	}
 }
 

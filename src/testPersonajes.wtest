@@ -1,0 +1,20 @@
+import jugadoresPersonajes.*
+import elementos.*
+import armass.*
+
+test "floki ataca un castillo" {
+	
+	floki.equiparArma(jabalina)
+	floki.encontrar(castillo)
+	
+	assert.that(not(jabalina.estaCargada()))
+}
+
+test "floki ataca a aurora" {
+	
+	floki.equiparArma(jabalina)
+	floki.encontrar(castillo)
+	floki.encontrar(aurora)
+	
+	assert.that(aurora.estaViva())
+}
